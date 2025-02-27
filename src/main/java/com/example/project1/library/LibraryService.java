@@ -20,8 +20,12 @@ public class LibraryService {
         this.libraryRepository = libraryRepository;
     }
 
-    public List<Library> getLibrary(){
+    public List<Library> getAllLibrary(){
         return libraryRepository.findAll();
+    }
+
+    public Library getLibraryById(long id) {
+        return libraryRepository.findById(id).orElse(null);
     }
 
     public void addNewLibrary(Library library) {

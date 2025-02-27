@@ -21,7 +21,7 @@ public class LibraryController {
     @GetMapping
     public List<Library> getLibrary(){
 
-        return libraryService.getLibrary();
+        return libraryService.getAllLibrary();
     }
 
     @PostMapping
@@ -41,4 +41,11 @@ public class LibraryController {
         @RequestParam (required = false) String title) {
         libraryService.updateLibrary(libraryId, title);
     }
+
+    @GetMapping(path = "{libraryId}")
+    public Library getSingleLibrary(@PathVariable("libraryId") Long libraryId){
+        return libraryService.getLibraryById(libraryId);
+    }
 }
+
+
