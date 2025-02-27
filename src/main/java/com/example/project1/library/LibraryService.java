@@ -43,19 +43,16 @@ public class LibraryService {
 
 
     @Transactional
-    public void updateStudent(Long libraryId, String title) {
+    public void updateLibrary(Long libraryId, String title) {
         Library library = libraryRepository.findById(libraryId).
                 orElseThrow(()-> new IllegalArgumentException(
                         "Library with id " + libraryId + " does not exist"
                 ));
         if (title != null &&
-        title.length()>0 &&
-        !Objects.equals(library.getTitle(), title)) {
+                title.length()>0 &&
+                !Objects.equals(library.getTitle(), title)) {
             library.setTitle(title);
 
         }
     }
-
-
-
 }

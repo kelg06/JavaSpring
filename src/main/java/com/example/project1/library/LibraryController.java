@@ -35,10 +35,10 @@ public class LibraryController {
         libraryService.deleteLibrary(libraryId);
     }
 
-    @PutMapping(path= "{libraryId")
+    @PutMapping(path= "{libraryId}")
     public void updateLibrary(
         @PathVariable("libraryId") Long libraryId,
         @RequestParam (required = false) String title) {
-        libraryService.updateStudent(libraryId, title);
+        libraryService.updateLibrary(libraryId, title);
     }
 }
